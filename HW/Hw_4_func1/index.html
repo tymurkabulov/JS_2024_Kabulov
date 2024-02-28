@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       //  - створити функцію яка створює параграф з текстом. Текст задати через аргумент`
+        let txt = 'Створити функцію яка створює параграф з текстом. Текст задати через аргумент. Створити функцію яка створює параграф з текстом. Текст задати через аргумент';
+        function newP(txt) {
+            return document.write(`<p>${txt}</p>`);
+        }
+        newP(txt);
+
+        //  - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий`
+        let txtList = 'argument'
+        function createList(txtList){
+            return document.write(`<ul>
+                    <li>${txtList}</li>
+                    <li>${txtList}</li>
+                    <li>${txtList}</li>
+                </ul>`)
+        }
+
+        createList(txtList);
+
+        //  - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)`
+        let txtList1 = 'argument'
+        let num = 5;
+        function createList1(txtList1,num){
+           let list = '<ul>';
+           for (let i = 0; i < num;i++){
+               list += `<li>${txtList1}</li>`
+           }
+           list += '</ul>'
+           return document.write(list);
+
+        }
+        createList1(txtList1,num);
+
+    //  - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список`
+        let arr = [1, 2, 3, 4, 5, 'asd', 'qwe', 'zxc', true, false, undefined]
+        function createList2(arr){
+            let list = '<ul>';
+            for (let i = 0;i < arr.length;i++){
+                list += `<li>${arr[i]}</li>`
+            }
+            list += '</ul>';
+
+            return document.write(list);
+        }
+        createList2(arr);
+    //  - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.`
+        let arr1 = [
+            { id: 1, name: 'Alice', age: 25 },
+            { id: 2, name: 'Bob', age: 30 },
+            { id: 3, name: 'Charlie', age: 40 },
+            { id: 4, name: 'David', age: 35 },
+            { id: 5, name: 'Emma', age: 28 }
+        ]
+
+    function createBlocks(arr1){
+            for (let i = 0;i < arr1.length;i++){
+                let block = `<div>${arr1[i].id}. ${arr1[i].name}, ${arr1[i].age} y.o.</div>`;
+                document.write(block);
+            }
+    }
+    createBlocks(arr1);
+    </script>
+</body>
+</html>
