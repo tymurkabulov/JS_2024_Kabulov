@@ -64,14 +64,16 @@
 
     function exchange(sumUAH, currencyValues, exchangeValues){
         let result = 0;
-        if (exchangeValues === currencyValues[0].currency){
-            result = sumUAH / currencyValues[0].value;
-        } else if (exchangeValues === currencyValues[1].currency){
-            result = sumUAH / currencyValues[1].value;
-        } else {
-            return `Wrong input data`;
+        let isValid = false;
+        for (let i = 0;i < currencyValues.length;i++){
+            if (exchangeValues === currencyValues[i].currency){
+                result = sumUAH / currencyValues[i].value;
+                isValid = true;
+            }
         }
-
+        if (!isValid){
+            return 'Wrong input data';
+        }
         return `Your exchanged amount is ${result} ${exchangeValues}.`;
 
     }
