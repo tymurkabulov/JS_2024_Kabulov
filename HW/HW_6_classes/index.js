@@ -70,7 +70,7 @@
         this.info = function (){
             for (let key in this){
                 if (typeof this[key] != 'function'){
-                    console.log(`${key} - ${this[key]}`)
+                    console.log(this[key])
                 }
             }
         };
@@ -107,7 +107,7 @@
         info(){
             for (let key in this){
                 if (typeof this[key] != 'function'){
-                    console.log(`${key} - ${this[key]}`)
+                    console.log(this[key])
                 }
             }
         };
