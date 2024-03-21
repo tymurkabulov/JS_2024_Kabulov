@@ -1,0 +1,25 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+  </head>
+  <body>
+    <script>
+
+      window.onload = function (){
+        let sessions = JSON.parse(localStorage.getItem('sessions')) || [];
+        let sessionsBlock = document.createElement('div');
+        sessionsBlock.className = 'sessions';
+
+        sessions.forEach(function(session) {
+          let sessionBlock = document.createElement('div');
+          sessionBlock.className = 'session';
+          sessionBlock.innerHTML = `<p>Date: ${session.date}</p><p>Page: ${session.page}</p>`;
+          sessionsBlock.appendChild(sessionBlock);
+        })
+        document.body.appendChild(sessionsBlock);
+      }
+    </script>
+  </body>
+  </html>
